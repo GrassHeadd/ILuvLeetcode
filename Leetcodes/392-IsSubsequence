@@ -1,0 +1,23 @@
+class Solution(object):
+    def isSubsequence(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        pointerSubStr = 0
+        if len(s) == 0:
+            return True
+
+        if len(s) > len(t) or len(t) == 0:
+            return False
+
+        for i in range(len(t)):
+            if s[pointerSubStr] == t[i]:
+                pointerSubStr += 1
+            if pointerSubStr == len(s):
+                return True
+            
+
+
+        return False
